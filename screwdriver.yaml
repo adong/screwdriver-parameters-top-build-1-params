@@ -1,0 +1,11 @@
+shared:
+    image: node:8
+
+parameters:
+  p1: p1
+
+jobs:
+    main:
+        requires: [~pr, ~commit]
+        steps:
+            - p1: echo $(meta get parameters.p1)
